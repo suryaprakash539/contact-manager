@@ -8,12 +8,13 @@ const userSchema=new Schema({
     username:{
         type:String,
         required:true,
-        unique:true,
+        
         minlength:5
     },
     email:{
         type:String,
         required:true,
+        unique:true,
         validate:{
             validator:function(value){
                   return validator.isEmail(value)

@@ -1,7 +1,7 @@
 import React from 'react'
-//import axios from '../../config/axios'
+import axios from '../../config/axios'
 import {connect} from 'react-redux'
-import { registerUser } from '../../actions/userAction'
+//import { registerUser } from '../../actions/userAction'
 
 class Register extends React.Component{
     constructor(){
@@ -24,18 +24,19 @@ class Register extends React.Component{
             email:this.state.email,
             password:this.state.password
         }
-        this.props.dispatch(registerUser(formData))
-        this.props.history.push('/users/login')
+       // this.props.dispatch(registerUser(formData))
+       // this.props.history.push('/users/login')
         
-        // axios.post('/users/register',formData)
-        // .then(response=>{
-        //     if(response.data.errors){
-        //         alert(response.data.message)
-        //     }
-        //     else{
-        //         this.props.history.push('/users/login')
-        //     }
-        // })
+        axios.post('/users/register',formData)
+        .then(response=>{
+            console.log(response.data)
+            if(response.data.errmsg || response.data.errors){
+                 alert('duplication error')
+             }
+             else{
+                this.props.history.push('/users/login')
+             }
+        })
     
     }
     render(){

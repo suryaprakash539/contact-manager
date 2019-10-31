@@ -7,17 +7,17 @@ export const resetUser=()=>{
     return {type:'RESET_USER'}
 }
 
-export const registerUser=(formData)=>{
-   return(dispatch)=>{
-    axios.post('/users/register',formData)
-    .then(response=>{
-        if(response.data.errors)
-        {
-           alert(response.data.message)
-        }
-    })
-   }   
-}
+// export const registerUser=(formData)=>{
+//    return(dispatch)=>{
+//     axios.post('/users/register',formData)
+//     .then(response=>{
+//         if(response.data.errors)
+//         {
+//            alert(response.data.message)
+//         }
+//     })
+//    }   
+// }
 
 // export const loginUser=(formData)=>{
 //     return (dispatch)=>{
