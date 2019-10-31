@@ -17,6 +17,7 @@ export const startSetContact=()=>{
         }})
         .then(response=>{
             const contacts=response.data
+           
             dispatch(setContact(contacts))
         })
     }

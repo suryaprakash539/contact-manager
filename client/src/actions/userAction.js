@@ -19,19 +19,20 @@ export const registerUser=(formData)=>{
    }   
 }
 
-export const loginUser=(formData)=>{
-    return (dispatch)=>{
-        axios.post('/users/login',formData)
-        .then(response=>{
-            if(response.data.token){
-                localStorage.setItem('userAuthToken',response.data.token)
-            }
-            else{
-                alert('invalid email/password')
-            }
-        })
-    }
-}
+// export const loginUser=(formData)=>{
+//     return (dispatch)=>{
+//         axios.post('/users/login',formData)
+//         .then(response=>{
+//             if(response.data.token){
+//                 localStorage.setItem('userAuthToken',response.data.token)
+                
+//             }
+//             else{
+//                 alert('invalid email/password')
+//             }
+//         })
+//     }
+// }
 
 export const accountUser=()=>{
     return (dispatch)=>{
