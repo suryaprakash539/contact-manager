@@ -56,7 +56,7 @@ class Account extends React.Component{
                  <tbody>
                      {
                          this.props.contacts.map((contact,index)=>{
-                             return <tr key={contact._id}>
+                             return <tr key={index+1}>
                                        <td>{index+1}</td>
                                        <td>{contact.name}</td>
                                        <td>{contact.email}</td>
