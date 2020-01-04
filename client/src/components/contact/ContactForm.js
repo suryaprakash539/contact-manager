@@ -1,4 +1,5 @@
 import React from 'react'
+import {Card} from 'react-bootstrap'
 
 class ContactForm extends React.Component{
     constructor(props){
@@ -27,11 +28,13 @@ class ContactForm extends React.Component{
     render(){
         return(
             <form onSubmit={this.handleSubmit}>
+                <div className='form-group form'>
+                <input type='text' className='form-control' placeholder='enter name' value={this.state.name} onChange={this.handleChange} name='name'/><br/>
+                <input type='text'  className='form-control' placeholder='enter email' value={this.state.email} onChange={this.handleChange} name='email'/><br/>
+                <input type='mobile'  className='form-control' placeholder='enter mobile' value={this.state.mobile} onChange={this.handleChange} name='mobile'/><br/>
+                </div>
                 <div className='form-group'>
-                name:<input type='text' className='form-control' value={this.state.name} onChange={this.handleChange} name='name'/><br/>
-                email:<input type='text'  className='form-control' value={this.state.email} onChange={this.handleChange} name='email'/><br/>
-                mobile:<input type='mobile'  className='form-control' value={this.state.mobile} onChange={this.handleChange} name='mobile'/><br/>
-                <button className='btn btn-primary'>submit</button>
+                <Card.Footer className="text-center"><input type='submit' className='btn btn-primary'/></Card.Footer>
                 </div>
             </form>
         )

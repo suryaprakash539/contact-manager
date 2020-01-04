@@ -10,6 +10,7 @@ import Logout from './components/user/Logout'
 import NewContact from './components/contact/NewContact'
 import ContactEdit from './components/contact/ContactEdit'
 
+
 function App(props) {
   return (
        <BrowserRouter>
@@ -41,8 +42,8 @@ function App(props) {
             <Route path='/users/login' component={Login}/>
             <Route path='/users/account' component={Account}/>
             <Route path='/users/logout' component={Logout}/>
-            <Route path='/contacts/new' component={NewContact}/>
-            <Route path='/contacts/edit/:id' component={ContactEdit}/>
+            <Route path='/contacts/new' component={NewContact} exact={true}/>
+            <Route path='/contacts/edit/:id' component={ContactEdit} exact={true}/>
           </Switch>
   
 

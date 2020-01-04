@@ -5,6 +5,7 @@ import {startRemoveContact, startSetContact} from '../../actions/contactAction'
 import {accountUser} from '../../actions/userAction'
 import {Table} from 'reactstrap'
 
+
 class Account extends React.Component{
 
     componentDidMount(){
@@ -43,7 +44,8 @@ class Account extends React.Component{
         return(
             <div>
              <h1>Listing contacts-{this.props.contacts.length}</h1>
-             <Table>
+             { 
+              <Table dark bordered hover responsive> 
                  <thead>
                      <tr>
                      <th>Id</th>
@@ -72,9 +74,10 @@ class Account extends React.Component{
                      }
                  </tbody>
              </Table>
+    }
              <h3><Link to='/contacts/new'>Add Contact</Link></h3>
-            </div>
-            
+             
+             </div>
         )
     }
 }
