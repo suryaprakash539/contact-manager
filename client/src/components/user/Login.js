@@ -1,6 +1,5 @@
 import React from 'react'
-import axios from '../../config/axios'
-//import { loginUser } from '../../actions/userAction'
+import { loginUser } from '../../actions/userAction'
 import { connect } from 'react-redux'
 
 class Login extends React.Component{
@@ -23,23 +22,24 @@ class Login extends React.Component{
             password:this.state.password
         }
         
+        this.props.dispatch(loginUser(formData,this.props))
         
-       // this.props.history.push('/users/account')
+       
 
         
-       axios.post('/users/login',formData)
-       .then(response=>{
-          if(response.data.token)
-          {   
-              const token = response.data.token
-              localStorage.setItem('userAuthToken',token)
-              this.props.history.push('/users/account')
-          }
-          else
-          {
-            alert('invalid email/password')
-          }
-       })
+    //    axios.post('/users/login',formData)
+    //    .then(response=>{
+    //       if(response.data.token)
+    //       {   
+    //           const token = response.data.token
+    //           localStorage.setItem('userAuthToken',token)
+    //           this.props.history.push('/users/account')
+    //       }
+    //       else
+    //       {
+    //         alert('invalid email/password')
+    //       }
+    //    })
         
     }
     render(){

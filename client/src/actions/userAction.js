@@ -7,32 +7,37 @@ export const resetUser=()=>{
     return {type:'RESET_USER'}
 }
 
-// export const registerUser=(formData)=>{
-//    return(dispatch)=>{
-//     axios.post('/users/register',formData)
-//     .then(response=>{
-//         if(response.data.errors)
-//         {
-//            alert(response.data.message)
-//         }
-//     })
-//    }   
-// }
+export const registerUser=(formData,props)=>{
+   return(dispatch)=>{
+    axios.post('/users/register',formData)
+    .then(response=>{
+        if(response.data.errors || response.data.errmsg)
+        {
+           alert('error occured because of duplicate values')
+        }
+        else
+        {
+            console.log(response.data)
+            props.history.push('/users/login')
+        }
+    })
+   }   
+}
 
-// export const loginUser=(formData)=>{
-//     return (dispatch)=>{
-//         axios.post('/users/login',formData)
-//         .then(response=>{
-//             if(response.data.token){
-//                 localStorage.setItem('userAuthToken',response.data.token)
-                
-//             }
-//             else{
-//                 alert('invalid email/password')
-//             }
-//         })
-//     }
-// }
+export const loginUser=(formData,props)=>{
+    return (dispatch)=>{
+        axios.post('/users/login',formData)
+        .then(response=>{
+            if(response.data.token){
+                localStorage.setItem('userAuthToken',response.data.token)
+                props.history.push('/users/account')
+              }
+            else{
+                alert('invalid email/password')
+            }
+        })
+    }
+}   
 
 export const accountUser=()=>{
     return (dispatch)=>{
