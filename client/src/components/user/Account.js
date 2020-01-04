@@ -43,7 +43,7 @@ class Account extends React.Component{
     render(){
         return(
             <div>
-             <h1>Listing contacts-{this.props.contacts.length}</h1>
+             <h1 className="text-center">Listing contacts-{this.props.contacts.length}</h1>
              { 
               <Table dark bordered hover responsive> 
                  <thead>
@@ -75,7 +75,7 @@ class Account extends React.Component{
                  </tbody>
              </Table>
     }
-             <h3><Link to='/contacts/new'>Add Contact</Link></h3>
+             <h3 className="text-center"><Link to='/contacts/new'>Add Contact</Link></h3>
              
              </div>
         )

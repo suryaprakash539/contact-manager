@@ -1,6 +1,7 @@
 import React from 'react'
 import { loginUser } from '../../actions/userAction'
 import { connect } from 'react-redux'
+import {Card} from 'react-bootstrap'
 
 class Login extends React.Component{
     constructor(){
@@ -44,13 +45,17 @@ class Login extends React.Component{
     }
     render(){
         return(
-            <div>
-                <h1>Login Form</h1>
-            <form onSubmit={this.handleSubmit}>
+            <div style={{background: 'orange'}}>
+                <h1 className="text-center">Login Form</h1>
+              <form onSubmit={this.handleSubmit}>
                <div className='form-group'>
-                email:<input type='text' className='form-control' value={this.state.email} onChange={this.handleChange} name='email'/><br/>
-                password:<input type='password' className='form-control' value={this.state.password} onChange={this.handleChange} name='password'/><br/>
-               <button className='btn btn-primary'>Submit</button>
+                <input type='text'style={{background: 'lightblue'}} placeholder='enter the email' className='form-control' value={this.state.email} onChange={this.handleChange} name='email'/><br/>
+                <input type='password'style={{background: 'lightblue'}} placeholder='enter the password' className='form-control' value={this.state.password} onChange={this.handleChange} name='password'/><br/>
+                </div>
+                <div className='form-group'>
+                
+                <Card.Footer className="text-center"><input type='submit' className='btn btn-primary'/></Card.Footer>
+
                 </div>
             </form>
             </div>        

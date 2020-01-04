@@ -17,15 +17,15 @@ function App(props) {
          <div>
                 {(Object.keys(props.user).length>=3)?(
                   <div>
-                     <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                       <Link className='nav-link' to='/users/account'>Account</Link>
                       <Link className='nav-link' to='/users/logout'>Logout</Link>
                       </nav>
                   </div>
                 ):
                   (<div>
-                  <h1 className='text-center'>Welcome to the Contact Manager</h1>
-                  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                  <h1 className='text-center' >Welcome to the Contact Manager</h1>
+                  <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                  <Link className='nav-link' to='/users/register'>Register</Link>
                  <Link className='nav-link' to='/users/login'>Login</Link>
                  </nav>

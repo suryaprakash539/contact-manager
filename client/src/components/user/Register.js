@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { registerUser } from '../../actions/userAction'
+import {Card} from 'react-bootstrap'
 
 class Register extends React.Component{
     constructor(){
@@ -40,14 +41,18 @@ class Register extends React.Component{
     }
     render(){
         return(
-            <div>
-                <h1>Registration Form</h1>
-            <form onSubmit={this.handleSubmit}>
+            <div style={{background: 'orange'}}>>
+                <h1 className='text-center'>Registration Form</h1>
+               <form onSubmit={this.handleSubmit}>
                 <div className='form-group'>
-                username:<input type='text'className='form-control' value={this.state.username} onChange={this.handleChange} name='username'/><br/>
-                email:<input type='text' className='form-control' value={this.state.email} onChange={this.handleChange} name='email'/><br/>
-                password:<input type='password' className='form-control' value={this.state.password} onChange={this.handleChange} name='password'/><br/>
-                <button className='btn btn-primary'>submit</button>
+                <input style={{background: 'lightblue'}} type='text' placeholder='enter the name' className='form-control' value={this.state.username} onChange={this.handleChange} name='username'/><br/>
+                <input style={{background: 'lightblue'}} type='text' placeholder='enter the email' className='form-control' value={this.state.email} onChange={this.handleChange} name='email'/><br/>
+                <input style={{background: 'lightblue'}} type='password' placeholder='enter the password' className='form-control' value={this.state.password} onChange={this.handleChange} name='password'/><br/>
+                </div>
+                <div className='form-group'>
+                
+                <Card.Footer className="text-center"><input type='submit' className='btn btn-primary'/></Card.Footer>
+
                 </div>
             </form>
             </div>        

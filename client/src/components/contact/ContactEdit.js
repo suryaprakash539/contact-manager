@@ -21,7 +21,7 @@ class ContactEdit extends React.Component{
     render(){
         return(
             <div>
-                <h1>EDIT Contact</h1>
+                <h1 className="text-center">EDIT Contact</h1>
             <ContactForm contact={this.props.contact} handleContactSubmit={this.handleContactSubmit}/>
             </div>
         )

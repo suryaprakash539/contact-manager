@@ -4,8 +4,7 @@ import {logoutUser} from '../../actions/userAction'
 
 class Logout extends React.Component{
     componentDidMount(){
-        this.props.dispatch(logoutUser())
-        this.props.history.push('/')
+        this.props.dispatch(logoutUser(this.props))
     //   axios.delete('/users/logout',{headers:{
     //       'x-auth':localStorage.getItem('token')
     //   }})

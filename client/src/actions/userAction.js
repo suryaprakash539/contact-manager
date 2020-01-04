@@ -51,7 +51,7 @@ export const accountUser=()=>{
     }
 }
 
-export const logoutUser=()=>{
+export const logoutUser=(props)=>{
     return (dispatch)=>{
         axios.delete('/users/logout',{headers:{
             'x-auth':localStorage.getItem('token')
@@ -59,6 +59,7 @@ export const logoutUser=()=>{
         .then(response=>{
             localStorage.removeItem('userAuthToken')
             dispatch(resetUser())
+            props.history.push('/')
            
         })
     }

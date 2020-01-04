@@ -22,7 +22,7 @@ class NewContact extends React.Component{
     render(){
         return(
             <div>
-                <h1>ADD Contact</h1>
+                <h1 className='text-center' style={{background: 'orange'}}>ADD Contact</h1>
                 <ContactForm handleContactSubmit={this.handleContactSubmit}/>
             </div>
         )
